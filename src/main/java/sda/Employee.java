@@ -26,7 +26,7 @@ public class Employee {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="phone_id")
     private Phone phone;
 
@@ -119,8 +119,5 @@ public class Employee {
                 Objects.equals(projects, employee.projects);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(employee_id, name, secondName, dateOfBirth, email, phone, tasks, projects);
-    }
+
 }

@@ -82,8 +82,4 @@ public class Task {
                 Objects.equals(employee, task.employee);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(task_id, title, description, type, employee);
-    }
 }

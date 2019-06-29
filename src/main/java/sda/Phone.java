@@ -19,7 +19,7 @@ public class Phone {
     private String model;
 
     @OneToOne(mappedBy = "phone",
-            fetch = FetchType.EAGER)
+            fetch = FetchType.LAZY)
     private Employee employee;
 
     public Integer getPhone_id() {
@@ -69,8 +69,4 @@ public class Phone {
                 Objects.equals(employee, phone.employee);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(phone_id, mark, model, employee);
-    }
 }
